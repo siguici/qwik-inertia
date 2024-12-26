@@ -1,0 +1,21 @@
+{
+  "name": "qwik-inertia-monorepo",
+  "module": "index.ts",
+  "type": "module",
+  "workspaces": ["labs/*", "libs/*"],
+  "scripts": {
+    "build": "bun run --cwd libs/qwik-inertia build",
+    "check": "biome ci .",
+    "check.format": "biome format .",
+    "check.lint": "biome check .",
+    "fix": "pnpm lint && pnpm format",
+    "format": "biome format --write .",
+    "lint": "biome check --write ."
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4"
+  },
+  "peerDependencies": {
+    "typescript": "^5.7.2"
+  }
+}

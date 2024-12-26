@@ -1,0 +1,57 @@
+{
+  "name": "qwik-inertia",
+  "version": "0.0.0",
+  "license": "MIT",
+  "description": "Qwik's adapter for Inertia.js",
+  "author": "Sigui Kessé Emmanuel <siguici@proton.me>",
+  "homepage": "https://github.com/siguici/qwik-inertia#readme",
+  "keywords": ["inertia", "inertiajs", "qwik", "qwikdev", "qwik-inertia"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/siguici/qwik-inertia.git",
+    "directory": "libs/qwik-inertia"
+  },
+  "bugs": {
+    "url": "https://github.com/siguici/qwik-inertia/issues"
+  },
+  "files": ["dist"],
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./types/index.d.ts",
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.js"
+    },
+    "./server": {
+      "types": "./types/server.d.ts",
+      "import": "./dist/server.esm.js",
+      "require": "./dist/server.js"
+    }
+  },
+  "typesVersions": {
+    "*": {
+      "server": ["types/server.d.ts"]
+    }
+  },
+  "scripts": {
+    "check": "tsc --noEmit",
+    "build": "pnpm check && tsup-node --env.NODE_ENV production",
+    "prepublishOnly": "bun run build",
+    "start": "tsup-node --env.NODE_ENV development --watch"
+  },
+  "devDependencies": {
+    "@builder.io/qwik": "1.12.0",
+    "@types/bun": "^1.1.14",
+    "@types/node": "^22.10.2",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2"
+  },
+  "peerDependencies": {
+    "@builder.io/qwik": "1.12.0"
+  },
+  "dependencies": {
+    "@inertiajs/core": "2.0.0"
+  }
+}

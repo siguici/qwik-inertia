@@ -1,0 +1,12 @@
+{
+  "organizeImports": {
+    "ignore": ["dist", "node_modules"]
+  },
+  "linter": {
+    "include": ["src"],
+    "ignore": ["dist", "node_modules"]
+  },
+  "formatter": {
+    "ignore": ["dist", "node_modules"]
+  }
+}
